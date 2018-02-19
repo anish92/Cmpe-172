@@ -1,0 +1,5 @@
+[servers:vars]
+ansible_ssh_private_key_file=./mykey.txt
+
+[servers]
+18.219.161.221

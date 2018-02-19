@@ -1,0 +1,11 @@
+---
+
+- hosts:servers
+  remote_user: ec2-user
+
+  tasks:
+   - name: stop nginx service
+     become: true
+     service: name=nginx state=stopped
+
+...

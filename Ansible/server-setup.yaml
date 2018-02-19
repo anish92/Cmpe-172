@@ -1,0 +1,17 @@
+---
+
+- hosts: servers
+  remote_user: ec2-user
+
+  vars:
+   - htmlContent: "Hello world!"
+
+  tasks:
+   - name: Nginx setup
+     become: true
+     yum: pkg=nginx state=installed update_cache=true
+
+   - name: index.html copy
+     become: true
+     template: src=index.html.j2 dest=/home/ec2-user/nginx/index.html
+...
